@@ -53,7 +53,7 @@
 
     #experience-item,#experience-item2,#experience-item3,#experience-item4 {
     width: 25%;
-    background-color: #636063;
+    background-color: #d1cdcd;
     }
 
 
@@ -207,8 +207,8 @@ body {
   }
   
   .experience-item {
-    background-color: #636063;
-    color: white;
+    background-color: #d1cdcd;
+    color: rgb(9, 9, 9);
     padding: 10px 30px;
     border-radius: 40px;
     transition: transform 0.4s ease;
