@@ -4,11 +4,11 @@
     text-align: center;
    }
 
-   .image {
+   #image {
     margin:auto;
     border-radius: 0;
     float:none;
-    width:50%;
+    width:25%;
     display: block;
    }
     
@@ -25,6 +25,17 @@
     justify-content:space-around;
     padding: 20px;
    }
+
+   #skills_lists {
+
+    display: grid;
+    gap: 20px 30px;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 50px;
+    justify-items: center;
+    
+  
+  }
 }
    
 
@@ -36,12 +47,13 @@
     flex-direction: row;
     justify-content: space-around;
     gap: 10px;
+    
 
     }
 
     #experience-item,#experience-item2,#experience-item3,#experience-item4 {
     width: 25%;
-    background-color: #c9a5cc;
+    background-color: #d1cdcd;
     }
 
 
@@ -49,6 +61,11 @@
     clear:left;
     padding: 10px;
     }
+
+    .connect-list{
+      justify-content:space-around;
+      padding: 20px;
+     }
 
 }
 
@@ -66,7 +83,7 @@
 
     #about-copy {
         display: inline-block;
-        padding: 30px;
+        padding: 50px;
     }
 
     #connect-list {
@@ -78,12 +95,18 @@
     justify-items: center;
     align-items: center;
     }
+
+    #image {
+      
+    }
+
+    
 }
 
 
 body {
-    background-image: url("https://images.unsplash.com/photo-1666891827442-136490fc4140?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTg2fHxwb3J0Zm9saW8lMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww");
-    color: rgb(94, 35, 54)
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRSjb2-Yy0He5vcjM3smYHPmxkv6_aN2ZSqQ&s");
+    color: rgb(24, 22, 22)
     
     
    
@@ -99,7 +122,7 @@ body {
  
 
   nav {
-    background-color: rgb(94, 35, 54);
+    background-color: rgb(65, 63, 63);
     padding: 10px;
     display: flex;
     justify-content: space-around;
@@ -131,6 +154,12 @@ body {
     margin-top: 30px;
  }
 
+ .image-picture {
+  border-radius: 25%;
+  height: auto;
+  width: 20%;
+ }
+
 
  img {
     border-radius: 50%;
@@ -148,7 +177,7 @@ body {
  h2 {
     font-weight: 800;
     font-size: 28px;
-    color: rgb(125, 53, 76);
+    color: rgb(74, 63, 66);
     padding: 20px;
  }
 
@@ -178,7 +207,8 @@ body {
   }
   
   .experience-item {
-    background-color: #faf0fb;
+    background-color: #d1cdcd;
+    color: rgb(9, 9, 9);
     padding: 10px 30px;
     border-radius: 40px;
     transition: transform 0.4s ease;
@@ -195,6 +225,17 @@ body {
     align-items: center;
 
   }
+
+  .skills_list {
+
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 50px;
+    justify-items: center;
+  
+  }
+
 
   .connect-list {
     
