@@ -4,6 +4,11 @@
     text-align: center;
    }
 
+   #about-container{
+    font-size: 16px;
+    line-height: 26px;
+}
+
    #image {
     margin:auto;
     border-radius: 0;
@@ -40,6 +45,15 @@
    
 
 @media (min-width: 651px) and (max-width: 1200px) {
+
+  #mainName {
+    text-align: center;
+   }
+
+  #about-container{
+      font-size: 16px;
+      line-height: 26px;
+  }
     
     #experience-list {
 
@@ -48,8 +62,10 @@
     justify-content: space-around;
     gap: 10px;
     
-
     }
+    h2 {
+      text-align: center;
+      }
 
     #experience-item,#experience-item2,#experience-item3,#experience-item4 {
     width: 25%;
@@ -59,7 +75,7 @@
 
     .about-section {
     clear:left;
-    padding: 10px;
+    padding: 20px;
     }
 
     .connect-list{
@@ -74,30 +90,29 @@
 
     #experience{
         clear:left;
-        padding: 10px;  
+          
     }
 
     #mainName {
         text-align: center;
        }
 
-    #about-copy {
-        display: inline-block;
-        padding: 50px;
+    #container_image {
+      display: flex;
+      align-items: center;
     }
 
-    #connect-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
-    gap: 15px;
-    max-width: 300px;
-    margin: auto;
-    justify-items: center;
-    align-items: center;
-    }
+    
 
     #image {
-      
+      margin-right: 50px;
+    }
+
+    #about-container {
+      margin-left: 40px;
+      margin-right: 40px;
+      font-size: 18px;
+      line-height: 28px;
     }
 
     
@@ -116,8 +131,17 @@ body {
     font-weight: 400;
     font-style: normal;
     scroll-behavior: smooth;
+    
 }
-  
+
+
+
+  #experience,#about, #skills, #projects, #connect, #message, #messages {
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 
  
 
@@ -178,7 +202,7 @@ body {
     font-weight: 800;
     font-size: 28px;
     color: rgb(74, 63, 66);
-    padding: 20px;
+    
  }
 
 .linkedin {
@@ -203,7 +227,7 @@ body {
     flex-direction: column;
     gap: 20px;
     max-width: auto;
-    margin: 0 auto;
+    
   }
   
   .experience-item {
@@ -244,7 +268,97 @@ body {
   }
 
 
+  #leave_message {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px 60px;
+  background-color: #f1ecec;
+  border-radius: 9px;
+  font-family: sans-serif;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  
+  }
+
+  label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+  }
+
+  input,textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #8d8b8b;
+  border-radius: 4px;
+  box-sizing:border-box;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 35px;
+  background-color: rgb(65, 63, 63);
+  color: rgb(249, 245, 245);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  
+}
+
+
+.unordered_list {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 20px 60px;
+  border-radius: 9px;
+  font-family: sans-serif;
+  
+}
+
+#messages ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.unordered_list li {
+  display:flex;
+  gap: 30px;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
  
+  
+}
+
+#messages span {
+  margin-left: 10px;
+  color: rgb(9, 9, 9);
+  flex-grow: 1;
+  
+}
+
+#messages a {
+  color: rgb(9, 9, 9);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#messages button {
+  background-color: rgb(65, 63, 63);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 0;
+}
+
+
+
+/* display: block;
+margin: 20px auto;
+  */
   
   
   
