@@ -27,6 +27,7 @@
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
       <a href="#connect">Connect</a>
+      <a href="#message">Leave a Message</a>
     </nav>
 
     <div id="main">
@@ -38,27 +39,29 @@
       <section id="about">
         <h2>About</h2>
 
-        <img
-          id="image"
-          class="image-picture"
-          src="./Images/Image (35).jpeg"
-          alt="My picture"
-        />
+        <div id="container_image">
+          <img
+            id="image"
+            class="image-picture"
+            src="./Images/Image (35).jpeg"
+            alt="My picture"
+          />
 
-        <div id="about-container">
-          <p id="about-copy" class="about-section">
-            Hi, I’m Anastasiia Boico — a Full Stack Developer based in Austin,
-            TX. I began my tech journey over five years ago as a manual and
-            automation software tester. While working closely with developers, I
-            discovered my passion for coding and problem-solving, which led me
-            to pursue a career in web development. Today, I specialize in
-            building clean, responsive, and user-friendly web applications from
-            front to back. Outside of work, I’m a proud mom of two little ones
-            who bring so much joy, energy, and inspiration into my life. They’re
-            a big part of what motivates me to keep growing and learning in my
-            career. I also love traveling and discovering new places whenever I
-            can. Let’s build something great together!
-          </p>
+          <div id="about-container">
+            <p id="about-copy" class="about-section">
+              Hi, I’m Anastasiia Boico — a Full Stack Developer based in Austin,
+              TX. I began my tech journey over five years ago as a manual and
+              automation software tester. While working closely with developers,
+              I discovered my passion for coding and problem-solving, which led
+              me to pursue a career in web development. Today, I specialize in
+              building clean, responsive, and user-friendly web applications
+              from front to back. Outside of work, I’m a proud mom of two little
+              ones who bring so much joy, energy, and inspiration into my life.
+              They’re a big part of what motivates me to keep growing and
+              learning in my career. I also love traveling and discovering new
+              places whenever I can. Let’s build something great together!
+            </p>
+          </div>
         </div>
       </section>
 
@@ -126,6 +129,39 @@
             /></a>
           </div>
         </div>
+      </section>
+
+      <section id="message">
+        <h2>Leave a Message</h2>
+
+        <form id="leave_message" name="leave_message">
+          <label for="user_name">Your Name</label><br />
+          <input
+            type="text"
+            name="usersName"
+            required="true"
+            id="user_name"
+          /><br />
+          <label for="user_email">Your Email</label><br />
+          <input
+            type="email"
+            name="usersEmail"
+            required="true"
+            id="user_email"
+          /><br />
+          <label for="user-message">Leave a message</label><br />
+          <textarea
+            name="usersMessage"
+            required="true"
+            id="user-message"
+          ></textarea>
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+
+      <section id="messages">
+        <h2>Messages</h2>
+        <ul class="unordered_list"></ul>
       </section>
     </div>
 
