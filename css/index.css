@@ -58,6 +58,7 @@
     #experience-list {
 
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
     gap: 10px;
@@ -354,12 +355,29 @@ button {
   margin: 0;
 }
 
+#projects ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
-
-/* display: block;
-margin: 20px auto;
-  */
+.project_list {
+  background-color: #d1cdcd;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 300px;
+  padding: 20px;
   
+}
+
+#messages {
+  display: none;
+}
+
   
   
  
