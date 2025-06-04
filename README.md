@@ -29,3 +29,5 @@ git clone https://github.com/Annieboic/anastasiia-boico-kepler.git
 [Linkedin:](http://linkedin.com/in/anastasia-boico-67bb771b9)
 [GitHub:](https://github.com/Annieboic)
 [My open API Project:](https://github.com/Annieboic/API-Project)
+
+# Thank you!
