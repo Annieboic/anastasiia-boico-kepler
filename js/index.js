@@ -3,7 +3,6 @@
 const footerElement = document.createElement("footer");
 document.body.appendChild(footerElement);
 
-
 const nameFooter = "Anastasia Boico";
 const today = new Date();
 const thisYear = today.getFullYear();
@@ -13,179 +12,168 @@ footer.classList.add("footer_element");
 const copyrightSymb = "\u00A9";
 
 const copyright = document.createElement("p");
-copyright.innerHTML =  `${nameFooter} ${copyrightSymb} ${thisYear}`;
+copyright.innerHTML = `${nameFooter} ${copyrightSymb} ${thisYear}`;
 
-copyright.classList.add("copyright")
+copyright.classList.add("copyright");
 
-footer.appendChild(copyright); 
+footer.appendChild(copyright);
 
 //styling Footer
-
 
 footer.style.color = "gray";
 footer.style.textAlign = "center";
 
-
 //skills
 
-const skills = ["JavaScript", "HTML", "CSS", "GitHub", "React", "Postman", "Figma", "Bootstrap", "Chakra", "MongoDB", "Node.js", "GraphQL APIs"]
+const skills = [
+  "JavaScript",
+  "HTML",
+  "CSS",
+  "GitHub",
+  "React",
+  "Postman",
+  "Figma",
+  "Bootstrap",
+  "Chakra",
+  "MongoDB",
+  "Node.js",
+  "GraphQL APIs",
+];
 
-const skillsSection = document.getElementById("skills")
+const skillsSection = document.getElementById("skills");
 
-const  skillsList = skillsSection.querySelector("ul");
+const skillsList = skillsSection.querySelector("ul");
 
-for (let i = 0; i < skills.length; i++){
-    const skill = document.createElement("li");
-    skill.textContent = skills[i];
-    skill.classList.add("skill");
-    skillsList.appendChild(skill)
+for (let i = 0; i < skills.length; i++) {
+  const skill = document.createElement("li");
+  skill.textContent = skills[i];
+  skill.classList.add("skill");
+  skillsList.appendChild(skill);
 }
 
 //Message Form
 
+const messageForm = document.querySelector("form");
+messageForm.addEventListener("submit", function (event) {
+  event.preventDefault();
 
+  alert("Thank you for the message!");
 
-const messageForm = document.querySelector('form');
-messageForm.addEventListener("submit", function(event){
-    event.preventDefault();
+  const nameText = event.target.usersName.value;
+  const emailText = event.target.usersEmail.value;
+  const messageText = event.target.usersMessage.value;
 
-    
-    alert('Thank you for the message!');
+  console.log("Name:", nameText);
+  console.log("Email:", emailText);
+  console.log("Message:", messageText);
 
-    const nameText = event.target.usersName.value;
-    const emailText = event.target.usersEmail.value;
-    const messageText = event.target.usersMessage.value;
+  const messageSection = document.getElementById("messages");
+  const messageList = messageSection.querySelector("ul");
+  const newMessage = document.createElement("li");
 
-    console.log("Name:", nameText);
-    console.log("Email:", emailText);
-    console.log("Message:", messageText);
+  messageSection.style.display = "block";
 
-    const messageSection = document.getElementById("messages");
-    const messageList = messageSection.querySelector("ul");
-    const newMessage = document.createElement("li");
+  newMessage.innerHTML = `<a href="mailto:${emailText}">${nameText}</a> <span class="message_text">${messageText}</span>`;
 
-    messageSection.style.display = "block";
-    
-    newMessage.innerHTML = `<a href="mailto:${emailText}">${nameText}</a> <span class="message_text">${messageText}</span>`;
+  messageList.appendChild(newMessage);
 
-    messageList.appendChild(newMessage);
+  const editButton = document.createElement("button");
+  editButton.textContent = "Edit Message";
+  editButton.setAttribute("type", "button");
+  editButton.addEventListener("click", function (event) {
+    const editTextChosen = newMessage.querySelector(".message_text"); //text chosen
 
+    const textToEdit = editTextChosen.textContent.trim(); //trim empty spaces
 
-    const editButton = document.createElement("button");
-    editButton.textContent = "Edit Message";
-    editButton.setAttribute("type", "button");
-    editButton.addEventListener("click", function(event){
-        const editTextChosen = newMessage.querySelector(".message_text"); //text chosen 
+    //create input field
 
-        const textToEdit = editTextChosen.textContent.trim(); //trim empty spaces
+    const inputField = document.createElement("input");
+    inputField.setAttribute("type", "text");
+    inputField.value = textToEdit; //placed text to input
 
+    //create save button after edditing
 
-        //create input field
+    const saveButton = document.createElement("button");
+    saveButton.textContent = "Save";
+    saveButton.setAttribute("type", "button");
 
-        const inputField = document.createElement("input")
-        inputField.setAttribute("type", "text");
-        inputField.value = textToEdit; //placed text to input
+    //replace buttons and text to input field
 
+    newMessage.replaceChild(inputField, editTextChosen);
+    editButton.replaceWith(saveButton);
 
-        //create save button after edditing
+    saveButton.addEventListener("click", function (event) {
+      const updatedText = inputField.value;
 
-        const saveButton = document.createElement("button");
-        saveButton.textContent = "Save";
-        saveButton.setAttribute("type", "button");
+      const newSpan = document.createElement("span");
+      newSpan.className = "message-textUpdated";
+      newSpan.textContent = " " + updatedText;
 
-        //replace buttons and text to input field
+      //replaceinput fiedl with a new span + text
 
-        newMessage.replaceChild(inputField,editTextChosen);
-        editButton.replaceWith(saveButton);
-
-        saveButton.addEventListener("click", function(event){
-            const updatedText = inputField.value;
-
-            const newSpan = document.createElement("span");
-            newSpan.className = "message-textUpdated";
-            newSpan.textContent = " " + updatedText;
-
-            //replaceinput fiedl with a new span + text
-
-            newMessage.replaceChild(newSpan, inputField);
-            saveButton.replaceWith(editButton)
-        })
-
-
-
-
-
-
-
-
-    })
-
-    
-    const removeButton = document.createElement("button");
-    removeButton.textContent = "Remove";
-    removeButton.setAttribute("type", "button");
-    removeButton.addEventListener("click", function(event){
-        const entry = newMessage.parentNode; //ul element chosen
-        
-        newMessage.remove(); //remove list element after clicking
-
-        if(messageList.children.length === 0){
-            messageSection.style.display = "none";
-        }
-
-    })
-
-    
-
-    newMessage.appendChild(editButton);
-    newMessage.appendChild(removeButton);
-    
-    
-    
-    messageForm.reset();
-
-
+      newMessage.replaceChild(newSpan, inputField);
+      saveButton.replaceWith(editButton);
+    });
   });
 
+  const removeButton = document.createElement("button");
+  removeButton.textContent = "Remove";
+  removeButton.setAttribute("type", "button");
+  removeButton.addEventListener("click", function (event) {
+    const entry = newMessage.parentNode; //ul element chosen
 
-  // (Optional) Hide the #messages section, including the Messages header, when the list is empty // DONE
- //(Optional) Create an "edit" button for each message entry that allows the user to input a new/modified message  // 
- //Link each project list to GitHub 
+    newMessage.remove(); //remove list element after clicking
 
+    if (messageList.children.length === 0) {
+      messageSection.style.display = "none";
+    }
+  });
 
+  newMessage.appendChild(editButton);
+  newMessage.appendChild(removeButton);
 
+  messageForm.reset();
+});
+
+//Link each project list to GitHub
 
 fetch("https://api.github.com/users/Annieboic/repos")
-.then(response => {
-    
-    if(!response.ok){
-        throw new Error(response.status)
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error(response.status);
     }
-    
-    return response.json()
-})
 
-.then((data) =>  {
+    return response.json();
+  })
+
+  .then((data) => {
     const repositories = data;
     console.log(repositories);
 
-    const projectSection = document.getElementById("projects")
-const projectList = projectSection.querySelector("ul")
+    const projectSection = document.getElementById("projects");
+    const projectList = projectSection.querySelector("ul");
 
+    for (let i = 0; i < repositories.length; i++) {
+      const project = document.createElement("li");
 
-for (let i = 0; i < repositories.length; i++) {
-    const project = document.createElement("li");
-    project.textContent = repositories[i].name;
-    project.classList.add("project_list");
-    projectList.appendChild(project);
-}
+      const link = document.createElement("a");
+      link.href = repositories[i].html_url;
+      link.textContent = repositories[i].name;
+      link.target = "_blank";
+      project.appendChild(link);
 
-})
+      project.classList.add("project_list");
+      projectList.appendChild(project);
+    }
+  })
 
-.catch(error => console.error(error))
+  .catch((error) => console.error(error));
 
+//Hamburger
 
+const hamburger = document.getElementById("hamburger_button");
+const nav = document.getElementById("navigation");
 
-
-
-
+hamburger.addEventListener("click", () => {
+  nav.classList.toggle("show");
+});
